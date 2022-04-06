@@ -1,0 +1,100 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[utf8]{inputenc} % UTF-8 encoding
+\usepackage[french]{babel} % Language support
+\usepackage[T1]{fontenc} % Times New Roman
+% \usepackage[latin1]{inputenc} % ISO 8859-1
+\usepackage{lmodern} % modern fonts
+\usepackage{xcolor} % color
+\usepackage{geometry} % Page size
+\usepackage{enumitem}
+\usepackage{titlesec, blindtext, color} % blindtext for titles
+\usepackage{graphicx} % Images
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{\fill}
+
+
+        \textcolor{gray}{\textbf{\huge{PV de livraison}}}
+
+        \vspace{0.5cm}
+
+        \textsl{\large{Projet <<Gestion de Stage>>}}
+
+        \vspace{1.5cm}
+
+        \rule{\linewidth}{0.15mm}
+        \textbf{Auteurs}
+
+        \vspace{0.5cm}
+
+        \small{\textit{Aymerick LAURETTA-PERONNE}} \\
+        \small{\textit{Benjamin NIDDAM}} \\
+        \small{\textit{Théo FIGINI}} \\
+        \small{\textit{Nicolas GOUWY}} \\
+        \small{\textit{Syoan ODOUHA}} \\
+        \small{\textit{Isaïe CLARIN}}
+        \rule{\linewidth}{0.15mm}
+
+        \vspace{2.5cm}
+
+        \textbf{Version <<1.0>>}
+
+        \vfill
+        \textbf{\today {}}
+    \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+
+\section*{Introduction}
+
+L'objectif de ce projet est de réaliser une application de mise en relation d'entreprises et d'étudiants dans l'optique de favoriser
+et faciliter la recherche de stage, d'emploi ou d'alternance.
+
+\newpage
+\section*{Description de la livraison}
+\subsection*{Documents}
+
+\begin{itemize}
+    \item Document de spécifications
+    \item Document de conception
+    \item Bilan du projet
+\end{itemize}
+
+
+Le code source est disponible \href{https://github.com/BBIITS/Gestion_de_stages}{ici}. (GitHub)
+
+
+\subsection*{Fonctionnalités livrés}
+
+Actuellement l'application permet la création de deux types de compte : étudiant et entreprise. Les utlisateurs ayant déjà un compte
+peuvent se connecter. Les entreprises peuvent ajouter des offres de stage et les étudiants peuvent postuler à ces offres. Les entreprises
+peuvent réagir à ces candidatures: accepter ou refuser. Les entreprises ainsi que les etudiants peuvent supprimer respectivement leurs
+offres et leurs candidatures. Et enfin, les utilisateurs ont la possibilité de se déconnecter.
+
+
+\subsection*{Informations relatives à la mise en place de l'application}
+Pour pouvoir héberger et déployer l'application sur le serveur, il faut avoir nodejs et npm installés en leur version les plus récentes.
+Avec ceci, il faudra installer la libraire $"PM2"$ en global sur votre serveur ainsi que le SGBDR $"mariadb"$ pour la base de données. Une fois ces
+outils installés, il faut via le SGBDR créer une base de données nomée $"gestion\_de\_stages"$.
+Une fois fait, il ne reste plus qu'à acceder au dossier de l'application,
+%le .env
+
+et lancer la commande $"npm install"$ pour installer les dépendances
+puis $"npm \: run \: start:prod"$ pour démarrer l'application. Cette commande va démarrer l'application en mode production et créer toutes les tables
+nécessaires à l'application dans la base de données.
+
+
+\section*{Commentaires}
+
+Il ne manque que deux fonctionnalités à ajouter dans l'application pour que cette derniere respecte complètement
+le cahier des charges:
+\begin{itemize}
+    \item la gestion des notifications
+    \item permettre aux utilisateurs d'acceder à la liste des offres de stage sans être inscrits
+\end{itemize}
+
+\end{document}
